@@ -1,0 +1,28 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating,ltablex}
+\usepackage{booktabs,lscape}
+
+\begin{document}
+
+\begin{table}
+	
+	\centering
+	\caption{Diversity estimates by normalized Shannon's entropy, considering each of 26 nucleotide positions 
+		containing amino acid substitutions conserved at greater than 75 percent in the FNV strains analyzed, relative
+		to FVV.}
+		\begin{ThreePartTable}
+
+			\taburowcolors [2]1{white .. gray!20}
+
+		\input{entropy_25_FNV_SOURCE}
+		\begin{tablenotes}
+			\item[]
+		\end{tablenotes}
+		\end{ThreePartTable}
+		\label{my-label}
+\end{table}
+\end{document}
+

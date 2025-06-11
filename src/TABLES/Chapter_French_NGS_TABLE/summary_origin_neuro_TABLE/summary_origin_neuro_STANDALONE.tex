@@ -1,0 +1,26 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating}
+\usepackage{booktabs}
+
+\begin{document}
+
+\begin{table}[h]
+	\centering
+	\caption{Origin of the strains used in the study.}
+		\begin{ThreePartTable}
+			\taburowcolors 1{white .. gray!20}
+
+		\input{summary_origin_neuro_SOURCE}
+		\begin{tablenotes}
+			\item[a]Not tested in monkeys or mice in Wang, et. al. 1995. When tested in Dunster et. al. 1999, FVV was 100 percent
+			lethal in suckling mice at 21 dpi, using 100 PFU dose i.p. 
+			
+		\end{tablenotes}
+		\end{ThreePartTable}
+		\label{my-label}
+\end{table}
+\end{document}
+

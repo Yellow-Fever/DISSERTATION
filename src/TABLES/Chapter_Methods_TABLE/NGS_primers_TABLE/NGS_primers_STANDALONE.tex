@@ -1,0 +1,23 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating}
+\usepackage{booktabs}
+
+\begin{document}
+
+\begin{sidewaystable}[h]
+	%\centering
+	\caption{Nonsynonymous variants in the Asibi Genome.}
+	%\label{my-label}
+	\begin{ThreePartTable}
+		\taburowcolors 1{white .. gray!20}
+	\input{NGS_primers_SOURCE}
+		\begin{tablenotes}
+			\item[a]Temperature was used only for chapter with Asibi/17D comparison. All others use 58 degrees C.
+		\end{tablenotes}
+	\end{ThreePartTable}
+\end{sidewaystable}
+\end{document}
+

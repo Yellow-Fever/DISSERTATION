@@ -1,0 +1,24 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating}
+\usepackage{booktabs}
+
+\begin{document}
+
+\begin{sidewaystable}[h]
+	\centering
+	\caption{Source information for vaccine and seed strains considered in the study.}
+		\begin{ThreePartTable}
+			\taburowcolors 1{white .. gray!20}
+
+		\input{strains_origin_SOURCE}
+		\begin{tablenotes}
+			\item[a]Strain was placed in the 17D-213 substrain by BLAST search.
+		\end{tablenotes}
+		\end{ThreePartTable}
+		\label{my-label}
+\end{sidewaystable}
+\end{document}
+

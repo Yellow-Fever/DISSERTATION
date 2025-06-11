@@ -1,0 +1,26 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\begin{document}
+
+\begin{sidewaystable}[h]
+	\centering
+	\caption{Consensus substitutions observed between Asibi and the Vaccine strains considered.}
+		\begin{ThreePartTable}
+			\taburowcolors [2]{white .. gray!20}
+
+		\input{substitutions_main_SOURCE}
+		\begin{tablenotes}
+			\item[a]Substitution is identified in World Health Organization technical specifications for YFV vaccines.
+			\item[b]Substitution is identified \emph{in addition} to World Health Organization technical specifications for YFV vaccines.
+		\end{tablenotes}
+		\end{ThreePartTable}
+		\label{my-label}
+\end{sidewaystable}
+\end{document}
+

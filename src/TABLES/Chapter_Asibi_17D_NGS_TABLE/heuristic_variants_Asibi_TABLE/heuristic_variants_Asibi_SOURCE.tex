@@ -1,0 +1,18 @@
+% Please add the following required packages to your document preamble:
+%booktabs table
+\footnotesize
+\begin{tabu} to \columnwidth {X[l]X[l]X[l]X[l]X[l]X[l]X[l]X[l]X[l]X[l]X[l]}
+\rowfont[1]{\bfseries}
+\toprule
+Position & Base & Variant Base & Codon & Local \newline Codon & Gene & Reference Amino Acid & Variant Amino Acid & Coverage Depth & Variant Reads & \% \newline Variant \\ \midrule
+620      & U    & C            & 168   & 47                   & prM  & Y                    & H                  & 8174           & 129           & 1.59                \\
+1054     & A    & C\tnote{a} & 312   & 27                   & E    & Q                    & H                  & 6743           & 656           & 9.74                \\
+2193     & C    & U\tnote{b} & 692   & 407                  & E    & A                    & V                  & 2640           & 346           & 13.11               \\
+2349     & C    & U            & 744   & 459                  & E    & A                    & V                  & 2985           & 121           & 4.07                \\
+2481     & A    & G            & 788   & 10                   & NS1  & K                    & R                  & 3356           & 420           & 12.53               \\
+3171     & A    & C            & 1018  & 240                  & NS1  & E                    & A                  & 2440           & 56            & 2.32                \\
+4416     & G    & A            & 1433  & 79                   & NS2B & S                    & N                  & 6744           & 195           & 1.86                \\
+5153     & A    & G\tnote{c} & 1679  & 195                  & NS3  & I                    & V                  & 6042           & 103           & 1.7                 \\
+9716     & G    & A            & 3200  & 694                  & NS5  & D                    & N                  & 3918           & 118           & 3.02                \\ \bottomrule
+
+\end{tabu}

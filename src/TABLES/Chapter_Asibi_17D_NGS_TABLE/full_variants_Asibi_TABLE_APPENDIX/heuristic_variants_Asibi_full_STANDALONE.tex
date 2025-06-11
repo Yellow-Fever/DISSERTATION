@@ -1,0 +1,23 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating,longtable,lscape}
+\usepackage{booktabs}
+
+\begin{document}
+\begin{landscape}
+	\begin{ThreePartTable}
+		\caption{Table of the Asibi variants, full.}
+		\taburowcolors [3] 1{white .. gray!20}
+		\input{heuristic_variants_Asibi_full_SOURCE}
+		\begin{tablenotes}
+			\item[a] Note here.
+			\item[b] Note here.
+			\item[c] Note here.
+		\end{tablenotes}
+		\label{long_Asibi_vars}
+	\end{ThreePartTable}
+\end{landscape}	
+\end{document}
+

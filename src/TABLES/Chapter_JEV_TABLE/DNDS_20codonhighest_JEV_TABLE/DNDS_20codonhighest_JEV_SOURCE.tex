@@ -1,0 +1,41 @@
+% This is the filler table for checking formats.
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{tabu} to \columnwidth {X[2,l]X[1.1,l]X[l]X[l]X[l]X[l]X[l]}
+	\rowfont[1]{\bfseries}
+\toprule
+                        &      &\multicolumn{2}{l}{Nucleotide Window\tnote{a}}   &\multicolumn{2}{l}{Codon Window\tnote{b}} & \\
+Strain                  & Gene & Start  & End & Start  & End  & \emph{dN/dS}  \\ \midrule
+SA14         & Envelope & 162  & 222  & 23  & 43  & 86.494 \\
+& Envelope & 1068 & 1128 & 31  & 51  & 74.207 \\
+& NS1      & 1080 & 1140 & 35  & 55  & 46.638 \\
+& NS1      & 1089 & 1149 & 38  & 58  & 38.702 \\
+& Envelope & 1104 & 1164 & 43  & 63  & 37.590 \\
+& Envelope & 1116 & 1176 & 47  & 67  & 35.728 \\
+& Envelope & 1395 & 1455 & 140 & 160 & 34.724 \\
+& NS1      & 1401 & 1461 & 142 & 162 & 28.143 \\
+& NS1      & 1458 & 1518 & 161 & 181 & 27.996 \\
+& NS3      & 1470 & 1530 & 165 & 185 & 27.171 \\ \midrule
+SA14-14-2/P1 & Envelope & 3624 & 3684 & 31  & 51  & 31.444 \\
+& Envelope & 3630 & 3690 & 33  & 53  & 29.072 \\
+& Envelope & 3639 & 3699 & 36  & 56  & 21.508 \\
+& Envelope & 3651 & 3711 & 40  & 60  & 20.507 \\
+& Envelope & 3657 & 3717 & 42  & 62  & 19.234 \\
+& Envelope & 3669 & 3729 & 46  & 66  & 10.751 \\
+& Envelope & 3681 & 3741 & 50  & 70  & 9.590  \\
+& NS4B     & 3687 & 3747 & 52  & 72  & 8.647  \\
+& NS4B     & 4290 & 4350 & 26  & 46  & 8.462  \\
+& Envelope & 5781 & 5841 & 392 & 412 & 6.831  \\ \midrule
+SA14-14-2/P2 & Envelope & 1668 & 1728 & 231 & 251 & 52.537 \\
+& Envelope & 1692 & 1752 & 239 & 259 & 51.716 \\
+& Envelope & 1704 & 1764 & 243 & 263 & 48.745 \\
+& Envelope & 2145 & 2205 & 390 & 410 & 47.104 \\
+& Envelope & 2160 & 2220 & 395 & 415 & 46.162 \\
+& Envelope & 2919 & 2979 & 148 & 168 & 45.595 \\
+& Envelope & 2940 & 3000 & 155 & 175 & 45.458 \\
+& Envelope & 3123 & 3183 & 216 & 236 & 44.278 \\
+& Envelope & 3132 & 3192 & 219 & 239 & 20.804 \\
+& Envelope & 3147 & 3207 & 224 & 244 & 20.048 \\ \bottomrule
+\end{tabu}

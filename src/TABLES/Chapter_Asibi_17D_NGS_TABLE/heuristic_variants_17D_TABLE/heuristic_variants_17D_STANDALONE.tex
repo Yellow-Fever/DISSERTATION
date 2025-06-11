@@ -1,0 +1,24 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating}
+\usepackage{booktabs}
+
+\begin{document}
+
+\begin{sidewaystable}[h]
+	\centering
+	\caption{Variants observed in the 17D-204 strain alignment using a 1 percent frequency cutoff heuristic.}
+		\begin{ThreePartTable}
+			\taburowcolors 1{white .. gray!20}
+
+		\input{heuristic_variants_17D_SOURCE}
+		\begin{tablenotes}
+			\item[a]Intersection of sequence with the Asibi strain.
+		\end{tablenotes}
+		\end{ThreePartTable}
+		\label{my-label}
+\end{sidewaystable}
+\end{document}
+

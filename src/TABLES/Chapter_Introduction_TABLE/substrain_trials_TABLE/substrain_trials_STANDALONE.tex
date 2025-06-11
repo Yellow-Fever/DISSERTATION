@@ -1,0 +1,30 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating, longtable}
+\usepackage{booktabs}
+
+\begin{document}
+
+%\begin{table}[h]
+%	\centering
+%	\caption{Substrain comparison trials.}
+		\begin{ThreePartTable}
+			\tabulinesep=1.2mm
+			\taburowcolors [3] 2{gray!20 .. white}
+
+		\input{substrain_trials_SOURCE}
+		\begin{tablenotes}
+			\item[a] parencite{Minor:2011hk}
+			\item[b] parencite{Lang:1999wi}
+			\item[c] parencite{BelmustoWorn:2005tt}
+			\item[d] parencite{Camacho:2004ui,Camacho:2005vb}
+			\item[e] parencite{Pfister:2005tm}
+			\item[f] parencite{Ripoll:2014fz}
+		\end{tablenotes}
+		\end{ThreePartTable}
+%		\label{substrain_comparison_Trials}
+%\end{table}
+\end{document}
+

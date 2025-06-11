@@ -1,0 +1,26 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[table]{xcolor}
+\usepackage{rotating,tabu}
+\usepackage{booktabs,threeparttablex,multirow}
+\begin{document}
+
+\begin{table}[h]
+	\centering
+	\begin{ThreePartTable}
+
+	\caption[Diversity summary for SA14, SA14-14-2/P1, and SA14-14-2/P2 using normalized Shannon's entropy,
+		split by gene segment.]{Diversity summary for SA14, SA14-14-2/P1, and SA14-14-2/P2 using normalized Shannon's entropy,
+	split by gene segment. Within each segment, strains are sorted by descending order of mean entropy value. n = number of nucleotide positions
+	per segment.}
+
+	\label{my-label}
+	%\taburowcolors [3]1{white .. gray!20}
+	\input{entropy_genewise_SOURCE}
+	\begin{tablenotes}
+	\item[]
+	\end{tablenotes}
+	\end{ThreePartTable}
+\end{table}
+\end{document}
+

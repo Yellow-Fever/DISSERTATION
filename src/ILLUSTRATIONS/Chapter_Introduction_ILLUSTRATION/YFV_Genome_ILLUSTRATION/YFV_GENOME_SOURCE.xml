@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="IBS 1.0" mode="nucleotide" width="800" height="600" rate="1.0">
+  <protein vertical="22" horizontal="0" locked="true">
+    <dash>1</dash>
+    <id>Yellow Fever Virus</id>
+    <start direction="Hide">1</start>
+    <end direction="Hide">10862</end>
+    <height size="12" color="0,0,0" colorline="0,0,0">5</height>
+    <dash>1</dash>
+    <gradient>Null</gradient>
+    <texture>00000_1.jpg</texture>
+    <textfont />
+    <component type="domain">
+      <start direction="Hide">119</start>
+      <end direction="Hide">482</end>
+      <name direction="Center" size="15" color="204,0,0" colortext="0,0,0" colorline="0,0,0">C</name>
+      <high>543</high>
+      <shapetype>Rectangle</shapetype>
+      <strokesize>1</strokesize>
+      <gradient>Down</gradient>
+      <texture>00000_0.jpg</texture>
+      <rotationAngle>0</rotationAngle>
+      <dash>false</dash>
+      <leftdash>false</leftdash>
+      <rightdash>false</rightdash>
+      <id>Capsid</id>
+      <textfont />
+    </component>
+    <component type="domain">
+      <start direction="Hide">483</start>
+      <end direction="Hide">974</end>
+      <name direction="Up" size="15" color="204,0,0" colortext="0,0,0" colorline="0,0,0">prM</name>
+      <high>543</high>
+      <shapetype>Rectangle</shapetype>
+      <strokesize>1</strokesize>
+      <gradient>Down</gradient>
+      <texture>00000_0.jpg</texture>
+      <rotationAngle>0</rotationAngle>
+      <dash>false</dash>
+      <leftdash>false</leftdash>
+      <rightdash>false</rightdash>
+      <id>Premembrane</id>
+      <textfont />
+    </component>
+    <component type="domain">
+      <start direction="Hide">974</start>
+      <end direction="Hide">2454</end>
+      <name direction="Center" size="15" color="204,0,0" colortext="0,0,0" colorline="0,0,0">E</name>
+      <high>543</high>
+      <shapetype>Rectangle</shapetype>
+      <strokesize>1</strokesize>
+      <gradient>Down</gradient>
+      <texture>00000_0.jpg</texture>
+      <rotationAngle>0</rotationAngle>
+      <dash>false</dash>
+      <leftdash>false</leftdash>
+      <rightdash>false</rightdash>
+      <id>Envelope</id>
+      <textfont />
+    </component>
+    <component type="domain">
+      <start direction="Hide">2454</start>
+      <end direction="Hide">3509</end>
+      <name direction="Center" size="15" color="0,153,153" colortext="0,0,0" colorline="0,0,0">NS1</name>
+      <high>543</high>
+      <shapetype>Rectangle</shapetype>
+      <strokesize>1</strokesize>
+      <gradient>Down</gradient>
+      <texture>00000_0.jpg</texture>
+      <rotationAngle>0</rotationAngle>
+      <dash>false</dash>
+      <leftdash>false</leftdash>
+      <rightdash>false</rightdash>
+      <id>Nonstructural Protein 1</id>
+      <textfont />
+    </component>
+    <component type="domain">
+      <start direction="Hide">4182</start>
+      <end direction="Hide">4572</end>
+      <name direction="Up" size="15" color="0,153,153" colortext="0,0,0" colorline="0,0,0">NS2B</name>
+      <high>543</high>
+      <shapetype>Rectangle</shapetype>
+      <strokesize>1</strokesize>
+      <gradient>Down</gradient>
+      <texture>00000_0.jpg</texture>
+      <rotationAngle>0</rotationAngle>
+      <dash>false</dash>
+      <leftdash>false</leftdash>
+      <rightdash>false</rightdash>
+      <id>Nonstructural Protein 2B</id>
+      <textfont />
+    </component>
+    <component type="domain">
+      <start direction="Hide">3510</start>
+      <end direction="Hide">4181</end>
+      <name direction="Down" size="15" color="0,153,153" colortext="0,0,0" colorline="0,0,0">NS2A</name>
+      <high>543</high>
+      <shapetype>Rectangle</shapetype>
+      <strokesize>1</strokesize>
+      <gradient>Down</gradient>
+      <texture>00000_0.jpg</texture>
+      <rotationAngle>0</rotationAngle>
+      <dash>false</dash>
+      <leftdash>false</leftdash>
+      <rightdash>false</rightdash>
+      <id>Nonstructural Protein 2A</id>
+      <textfont />
+    </component>
+    <component type="domain">
+      <start direction="Hide">4572</start>
+      <end direction="Hide">6440</end>
+      <name direction="Center" size="15" color="0,153,153" colortext="0,0,0" colorline="0,0,0">NS3</name>
+      <high>543</high>
+      <shapetype>Rectangle</shapetype>
+      <strokesize>1</strokesize>
+      <gradient>Down</gradient>
+      <texture>00000_0.jpg</texture>
+      <rotationAngle>0</rotationAngle>
+      <dash>false</dash>
+      <leftdash>false</leftdash>
+      <rightdash>false</rightdash>
+      <id>Nonstructural Protein 3</id>
+      <textfont />
+    </component>
+    <component type="domain">
+      <start direction="Hide">6441</start>
+      <end direction="Hide">6887</end>
+      <name direction="Down" size="15" color="0,153,153" colortext="0,0,0" colorline="0,0,0">NS4A</name>
+      <high>543</high>
+      <shapetype>Rectangle</shapetype>
+      <strokesize>1</strokesize>
+      <gradient>Down</gradient>
+      <texture>00000_0.jpg</texture>
+      <rotationAngle>0</rotationAngle>
+      <dash>false</dash>
+      <leftdash>false</leftdash>
+      <rightdash>false</rightdash>
+      <id>Nonstructural Protein 4A</id>
+      <textfont />
+    </component>
+    <component type="domain">
+      <start direction="Hide">6888</start>
+      <end direction="Hide">7637</end>
+      <name direction="Up" size="15" color="0,153,153" colortext="0,0,0" colorline="0,0,0">NS4B</name>
+      <high>543</high>
+      <shapetype>Rectangle</shapetype>
+      <strokesize>1</strokesize>
+      <gradient>Down</gradient>
+      <texture>00000_0.jpg</texture>
+      <rotationAngle>0</rotationAngle>
+      <dash>false</dash>
+      <leftdash>false</leftdash>
+      <rightdash>false</rightdash>
+      <id>Nonstructural Protein 4B</id>
+      <textfont />
+    </component>
+    <component type="domain">
+      <start direction="Hide">7638</start>
+      <end direction="Hide">10354</end>
+      <name direction="Center" size="15" color="0,153,153" colortext="0,0,0" colorline="0,0,0">NS5</name>
+      <high>543</high>
+      <shapetype>Rectangle</shapetype>
+      <strokesize>1</strokesize>
+      <gradient>Down</gradient>
+      <texture>00000_0.jpg</texture>
+      <rotationAngle>0</rotationAngle>
+      <dash>false</dash>
+      <leftdash>false</leftdash>
+      <rightdash>false</rightdash>
+      <id>Nonstructural Protein 5</id>
+      <textfont />
+    </component>
+    <component type="bracket">
+      <id>Nonstructurals</id>
+      <color>0,0,0</color>
+      <strokesize>3</strokesize>
+      <centerx>6465</centerx>
+      <centery>-60</centery>
+      <wide>3797</wide>
+      <rotationAngle>0</rotationAngle>
+      <shapetype>SquareBracket</shapetype>
+    </component>
+    <component type="bracket">
+      <id>Polyprotein</id>
+      <color>0,0,0</color>
+      <strokesize>3</strokesize>
+      <centerx>5224</centerx>
+      <centery>65</centery>
+      <wide>5094</wide>
+      <rotationAngle>-180</rotationAngle>
+      <shapetype>SquareBracket</shapetype>
+    </component>
+    <component type="bracket">
+      <id>Structurals</id>
+      <color>0,0,0</color>
+      <strokesize>3</strokesize>
+      <centerx>1357</centerx>
+      <centery>-60</centery>
+      <wide>1097</wide>
+      <rotationAngle>0</rotationAngle>
+      <shapetype>SquareBracket</shapetype>
+    </component>
+    <component type="note">
+      <text deltax="5376" deltay="80" size="15" style="Bold" angle="0" linesize="0" color="0,0,0" linecolor="0,0,0" linedash="false">Polyprotein</text>
+      <id>Polyprotein</id>
+      <textfont>Arial</textfont>
+    </component>
+    <component type="note">
+      <text deltax="6336" deltay="-85" size="15" style="Bold" angle="0" linesize="0" color="0,0,0" linecolor="0,0,0" linedash="false">Nonstructurals</text>
+      <id>Nonstructurals</id>
+      <textfont>Arial</textfont>
+    </component>
+    <component type="note">
+      <text deltax="1375" deltay="-85" size="15" style="Bold" angle="0" linesize="0" color="0,0,0" linecolor="0,0,0" linedash="false">Structurals</text>
+      <id>Structurals</id>
+      <textfont>Arial</textfont>
+    </component>
+    <component type="note">
+      <text deltax="-543" deltay="-29" size="15" style="Bold" angle="0" linesize="0" color="0,0,0" linecolor="0,0,0" linedash="false">5'-UTR</text>
+      <id>5'Untranslated</id>
+      <textfont>Arial</textfont>
+    </component>
+    <component type="note">
+      <text deltax="10898" deltay="-29" size="15" style="Bold" angle="0" linesize="0" color="0,0,0" linecolor="0,0,0" linedash="false">3'-UTR</text>
+      <id>3' Untranslated</id>
+      <textfont>Arial</textfont>
+    </component>
+    <component type="line">
+      <id>Note UTR connect</id>
+      <weight style="Arrow" color="0,0,0">1</weight>
+      <text size="0" color="0,0,0" direction="Hide" />
+      <x1>10590</x1>
+      <y1>-8</y1>
+      <x2>10881</x2>
+      <y2>-20</y2>
+      <shapetype>Straight</shapetype>
+      <dash>false</dash>
+    </component>
+    <component type="line">
+      <id>Note UTR Connect 5'</id>
+      <weight style="Arrow" color="0,0,0">1</weight>
+      <text size="0" color="0,0,0" direction="Hide" />
+      <x1>-36</x1>
+      <y1>-7</y1>
+      <x2>-488</x2>
+      <y2>-20</y2>
+      <shapetype>Straight</shapetype>
+      <dash>false</dash>
+    </component>
+  </protein>
+</project>
+

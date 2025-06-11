@@ -1,0 +1,27 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[table]{xcolor}
+\usepackage{rotating,tabu}
+\usepackage{booktabs,threeparttablex,multirow}
+\begin{document}
+
+\begin{table}[h]
+	\centering
+	\begin{ThreePartTable}
+
+	\caption{Amino acid substitutions differentiating the SA14 strain sequenced in this study to 
+		that of three others previously reported.}
+
+	\label{my-label}
+	\taburowcolors [2]1{white .. gray!20}
+	\input{substitutions_SA14_JEV_SOURCE}
+	\begin{tablenotes}
+	\item[a] Sequenced in this study.
+	\item[b] Reported by Nitayaphan et. al. 1990.
+	\item[c] Reported by Aihara et. al. 1991.
+	\item[d] Reported by Ni, et. al. 1994.		
+	\end{tablenotes}
+	\end{ThreePartTable}
+\end{table}
+\end{document}
+

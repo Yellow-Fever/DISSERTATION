@@ -1,0 +1,32 @@
+% This is the filler table for checking formats.
+% Please add the following required packages to your document preamble:
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+	\begin{tabu}{X[.9,l]X[.6,l]X[.7,l]X[.7,l]X[.7,l]X[.7,l]X[.6,l]X[1.4,l]X[1.4,l]}
+	\rowfont[1]{\bfseries}
+\toprule
+&      &   & \multicolumn{2}{c}{Nucleotide} & \multicolumn{2}{c}{Amino Acid} & \multicolumn{2}{c}{Variant Percent} \\ \midrule
+Position & Gene & Codon & Cons\tnote{a} & Var\tnote{b} & Cons  & Var & SA14-14-2/P1      & SA14-14-2/P2 \\ \midrule
+948   & M    & 66  & C & U & L & F  & 1.026  & 0.8972 \\
+1116  & E    & 47  & A & G & N & D  & 22.87  & 36.18  \\
+1453  &      & 159 & U & A & V & D  & 10.59  & 11.38  \\
+1512  &      & 179 & A & G & K & E  & 36.48  & 42.28  \\
+1911  &      & 312 & A & G & K & E  & 1.538  & 0.9815 \\
+2646  & NS1  & 57  & G & A & V & I  & 0.9662 & 0.386  \\
+3652  &      & 392 & U & G & V & G\tnote{c} & 0.9572 & 1.365  \\
+3669  &      & 398 & C & U & L & F  & 6.045  & 8.313  \\
+3695  &      & 406 & G & C & L & F  & 3.907  & 4.841  \\
+5311  & NS3  & 235 & U & C & V & A\tnote{c} & 1.693  & 1.707  \\
+5781  &      & 392 & G & A & D & N  & 0.6344 & 1.04   \\
+5835  &      & 410 & G & A & D & N  & 11.18  & 8.654  \\
+7167  & NS4B & 86  & G & A & V & M  & 2.13   & 3.166  \\
+7657  &      & 249 & A & G & D & G  & 20.12  & 15.99  \\
+7774  & NS5  & 24  & U & C & I & T  & 1.901  & 1.767  \\
+8791  &      & 372 & C & U & A & V  & 1.077  & 2.365  \\
+9292  &      & 539 & G & C & G & A  & 0.736  & 1.795  \\
+10069 &      & 798 & C & U & T & I  & 0.8492 & 0.8072 \\
+10092 &      & 806 & G & C & G & R  & 1.096  & 0.7716 \\
+10329 &      & 906 & G & A & V & I  & 2.132  & 1.709 \\ \bottomrule
+\end{tabu}

@@ -1,0 +1,23 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating}
+\usepackage{booktabs}
+
+\begin{document}
+
+\begin{table}[h]
+	\centering
+	\caption{Amino Acids listed by the WHO standard genotype for 17DD strains.}
+		\begin{ThreePartTable}
+			\taburowcolors 1{white .. gray!20}
+		\input{supplement_17D204_subs_SOURCE}
+		\begin{tablenotes}
+			\item[a]Residue is coded by both substitutions in the codon.
+		\end{tablenotes}
+		\end{ThreePartTable}
+		\label{my-label}
+\end{table}
+\end{document}
+

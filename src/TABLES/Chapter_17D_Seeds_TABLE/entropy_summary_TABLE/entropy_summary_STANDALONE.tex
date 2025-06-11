@@ -1,0 +1,24 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating}
+\usepackage{booktabs}
+
+\begin{document}
+
+\begin{sidewaystable}[h]
+	\centering
+	\caption{Entropy information for the entire virus.}
+		\begin{ThreePartTable}
+			\taburowcolors 1{white .. gray!20}
+
+		\input{entropy_summary_SOURCE}
+		\begin{tablenotes}
+			\item[a]No notes for this table.
+		\end{tablenotes}
+		\end{ThreePartTable}
+		\label{my-label}
+\end{sidewaystable}
+\end{document}
+

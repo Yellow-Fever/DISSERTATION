@@ -1,0 +1,23 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating}
+\usepackage{booktabs}
+
+\begin{document}
+
+\begin{table}[h]
+	\centering
+	\caption{Summary of dN/dS ratio for each gene.}
+		\begin{ThreePartTable}
+			\taburowcolors 1{white .. gray!20}
+		\input{DNDS_summary_SOURCE}
+		\begin{tablenotes}
+			\item[a]ORF = open reading frame.
+		\end{tablenotes}
+		\end{ThreePartTable}
+		\label{my-label}
+\end{table}
+\end{document}
+

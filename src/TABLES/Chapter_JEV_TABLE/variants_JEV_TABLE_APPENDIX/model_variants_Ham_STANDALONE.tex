@@ -1,0 +1,25 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[table]{xcolor}
+\usepackage{rotating,tabu}
+\usepackage{booktabs,threeparttablex,multirow}
+\begin{document}
+
+\begin{table}[h]
+
+		\centering
+		\begin{ThreePartTable}
+			
+			\caption{Variant amino acid substitutions in Asibi and Hamster/P7 Strains.}
+			
+			\label{my-label}
+			\taburowcolors [2]1{white .. gray!20}
+			\input{model_variants_Ham_SOURCE}
+			\begin{tablenotes}
+				\item[a] Consensus nucleotide or residue in the newly computed consensus sequence.
+				\item[b] Variant nucleotide or residue in the alignment, which is observed below the consensus frequency.
+			\end{tablenotes}
+		\end{ThreePartTable}
+\end{table}
+\end{document}
+

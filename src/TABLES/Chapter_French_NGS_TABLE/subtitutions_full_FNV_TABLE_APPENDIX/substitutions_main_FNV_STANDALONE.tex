@@ -1,0 +1,25 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating,ltablex}
+\usepackage{booktabs,lscape}
+
+\begin{document}
+
+%\begin{landscape}
+%	\centering
+%	
+		\begin{ThreePartTable}
+
+			\taburowcolors [2]1{white .. gray!20}
+
+		\input{substitutions_main_FNV_SOURCE}
+		\begin{tablenotes}
+			\item[a]Intersection of sequence with the Asibi strain.
+		\end{tablenotes}
+		\end{ThreePartTable}
+		\label{my-label}
+%\end{landscape}
+\end{document}
+

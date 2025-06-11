@@ -1,0 +1,24 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating,longtable,lscape}
+\usepackage{booktabs}
+
+\begin{document}
+
+%\begin{landscape}
+		\begin{ThreePartTable}
+		
+		\taburowcolors 1{white .. gray!20}
+
+		\input{revertants_modeled_SOURCE}
+		\begin{tablenotes}
+			\item[a]Note goes here.
+		\end{tablenotes}
+		\end{ThreePartTable}
+				
+		\label{my-label}
+%\end{landscape}
+\end{document}
+

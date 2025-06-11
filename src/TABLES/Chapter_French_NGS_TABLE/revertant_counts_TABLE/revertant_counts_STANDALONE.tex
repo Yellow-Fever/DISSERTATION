@@ -1,0 +1,24 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating}
+\usepackage{booktabs}
+
+\begin{document}
+
+\begin{table}[h]
+	\centering
+	\caption{Counts of revertants, probabilistic.}
+		\begin{ThreePartTable}
+			\taburowcolors 1{white .. gray!20}
+
+		\input{revertant_counts_SOURCE}
+		\begin{tablenotes}
+			\item[a]Was not tested by Wang et. al.
+		\end{tablenotes}
+		\end{ThreePartTable}
+		\label{my-label}
+\end{table}
+\end{document}
+

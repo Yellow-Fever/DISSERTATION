@@ -1,0 +1,28 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating,ltablex,lscape}
+\usepackage{booktabs}
+
+
+\newcommand*\rot{\rotatebox{270}}
+
+\begin{document}
+
+
+\begin{landscape}[h]
+	\centering
+%	\caption{Variants observed in the 17D-204 strain alignment using a 1 percent frequency cutoff heuristic.}
+		\begin{ThreePartTable}
+			\taburowcolors [3]1{white .. gray!20}
+
+		\input{revertants_FNV_SOURCE}
+		\begin{tablenotes}
+			\item[a]Intersection of sequence with the Asibi strain.
+		\end{tablenotes}
+		\end{ThreePartTable}
+		\label{my-label}
+\end{landscape}
+\end{document}
+

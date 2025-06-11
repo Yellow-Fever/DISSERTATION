@@ -1,0 +1,25 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[table]{xcolor}
+\usepackage{rotating,tabu}
+\usepackage{booktabs,threeparttablex,multirow}
+\begin{document}
+
+\begin{table}[h]
+	\centering
+	\begin{ThreePartTable}
+
+	\caption[Summary of diversity by normalized Shannon's entropy for nucleotide positions with SA14-14-2 amino acid
+	substitutions, by gene segment.]{Summary of diversity by normalized Shannon's entropy for nucleotide positions with SA14-14-2 amino acid
+		substitutions, by gene segment.}
+
+	\label{my-label}
+%	\taburowcolors [3]1{white .. gray!20}
+	\input{entropy_AA_individual_SOURCE}
+	\begin{tablenotes}
+	\item[]
+	\end{tablenotes}
+	\end{ThreePartTable}
+\end{table}
+\end{document}
+

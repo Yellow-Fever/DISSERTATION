@@ -1,0 +1,25 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating,multirow}
+\usepackage{booktabs}
+\begin{document}
+
+
+
+\begin{sidewaystable}[h]
+	%\centering
+	\caption{Diversity index comparison for individual genes between Asibi and 17D-204.}
+	%\label{my-label}
+	\begin{ThreePartTable}
+		\taburowcolors [3] 1{white .. gray!20}
+	\input{diversity_stats_SOURCE}
+		\begin{tablenotes}
+			\item[*]Statistically significant at \emph{p}<0.001.
+		\end{tablenotes}
+	\end{ThreePartTable}
+\end{sidewaystable}
+
+\end{document}
+

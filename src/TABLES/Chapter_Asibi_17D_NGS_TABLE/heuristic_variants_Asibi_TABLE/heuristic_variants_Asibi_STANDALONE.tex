@@ -1,0 +1,24 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating}
+\usepackage{booktabs}
+\begin{document}
+
+\begin{sidewaystable}[h]
+	%\centering
+	\caption{Nonsynonymous variants in the Asibi Genome.}
+	%\label{my-label}
+	\begin{ThreePartTable}
+		\taburowcolors 1{white .. gray!20}
+	\input{heuristic_variants_Asibi_SOURCE}
+		\begin{tablenotes}
+			\item[a]Intersection of sequence with the HeLa/P6 strain.
+			\item[b]Intersection of sequence with the French neurotropic vaccine.
+			\item[c]Intersection of sequence with the 17D-204 strain.
+		\end{tablenotes}
+	\end{ThreePartTable}
+\end{sidewaystable}
+\end{document}
+

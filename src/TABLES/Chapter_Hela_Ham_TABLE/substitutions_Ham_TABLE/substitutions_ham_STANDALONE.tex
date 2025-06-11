@@ -1,0 +1,23 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[table]{xcolor}
+\usepackage{rotating,tabu}
+\usepackage{booktabs,threeparttablex,multirow}
+\begin{document}
+
+\begin{table}[h]
+	\centering
+	\begin{ThreePartTable}
+
+	\caption{Amino Acid Substitutions in the Hamster/P7 virus}
+
+	\label{my-label}
+	\taburowcolors [3]1{white .. gray!20}
+	\input{substitutions_ham_SOURCE}
+	\begin{tablenotes}
+	\item[a] Substitution was described by McArthur et al, but was not observed in this study.	
+	\end{tablenotes}
+	\end{ThreePartTable}
+\end{table}
+\end{document}
+

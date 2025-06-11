@@ -1,0 +1,169 @@
+%\documentclass[border=0.5cm]{standalone}
+%\usepackage{tikz}
+%\usetikzlibrary{shapes,calc}
+%\begin{document}
+
+% TODO: DONT FORGET TO ADD THE NIGERIA STRAIN
+% TODO: DONT FORGET TO ADD THE LEGEND
+% TODO: INDICATE INVESTIGATIONAL WITH DASHED LINES
+% TODO: SCALE of PASSAGE
+\tikzstyle{every node}=[font=\footnotesize]
+\tikzstyle{17DD} = [draw,blue, thick]
+\tikzstyle{17D204} = [draw, black!60!green, thick]
+\tikzstyle{17D213} = [draw, brown, thick]
+\tikzstyle{middlestrain} = [rectangle, draw, fill=white, minimum height=1em, text centered]
+\tikzstyle{endstrain} = [rectangle, draw, fill=yellow,
+minimum height=1em, text centered]
+\tikzstyle{parentstrain} = [rectangle, draw, fill=orange,
+minimum height=1em, text centered]
+\tikzstyle{country} = [rectangle, draw, fill=gray!40, dashed,
+minimum height=1em, text centered, opacity=1, text opacity=1]
+
+
+\begin{tikzpicture}[node distance = 2cm, auto, font=\sffamily, scale=.85]
+%	\draw[help lines] (0,0) grid (10,11);
+%	\draw[help lines] (0,-7) grid (10,-1);
+
+	%draw the passage numbers for 204 strains
+	\foreach \y [evaluate=\y as \yeval using int(239-\y)] in {11,...,0}
+	{
+		\node at (-1.4,\y){\yeval};
+	}
+	%draw the passage numbers for 17DD strains
+		\foreach \y [evaluate=\y as \yeval using int(281-\y)]in {-7,...,-1}
+		{
+			\node at (-1.4,\y){\yeval};
+		}
+	
+	\coordinate (a) at (11,11);
+	\coordinate (b) at (0,0);
+
+	%Basal Strains, with passage level nodes directly following.
+	\node [parentstrain] (Asibi) at (4.0,13) {Asibi};
+		\node at (-1.4,13){0};	
+	\node [middlestrain] (17D) at (4.0,12.5) {17D};
+		\node at (-1.4,12.5){176};
+	\node [middlestrain] (17Dlow) at (4.0,12) {17D Low};
+		\node at (-1.4,12){195};
+	\node [middlestrain] (17D204) at (4.0,11.5) {17D-204};
+		\node at (-1.4,11.5){204};
+	\node [middlestrain] (Columbia88) at (4.0,11) {Columbia 88};
+	\node [middlestrain] (RF1453) at (4.0,10) {RF145-3};
+	\node [middlestrain] (RMLYF-1) at (4.0,9.0) {RML YF-1};
+	\node [middlestrain] (RMLYF-10) at (4.0,8.0) {RML YF-10};
+	\node [middlestrain] (AB237) at (4.0,7.0) {AB237};
+	% Line connections for YF-Vax
+	\path [17D204] (Asibi) -- (17D);
+	\path [17D204] (17D) -- (17Dlow);
+	\path [17D204] (17Dlow) -- (17D204);
+	\path [17D204] (17D204) -- (Columbia88);
+	\path [17D204] (Columbia88) -- (RF1453);
+	\path [17D204] (RF1453) -- (RMLYF-1);
+	\path [17D204] (RMLYF-1) -- (RMLYF-10);
+	\path [17D204] (RMLYF-10) -- (AB237);
+	
+	% Strains for YF-Vax
+	\node [middlestrain] (USLF1) at (2.0,6.0) {LF};
+	\node [middlestrain] (USLF2) at (2.0,5.0) {LF2};
+	\node [middlestrain] (USS1) at (2.0,4.0) {S\textsubscript{1}};
+	\node [middlestrain] (USS2) at (2.0,3.0) {S2};
+	\node [endstrain] (YF-Vax) at (2.0,2.0) {YF-Vax\textsuperscript{\textregistered}-V};
+
+	% Line connections for YF-Vax
+	\path [17D204] (AB237) -| (USLF1);
+	\path [17D204] (USLF1) -- (USLF2);
+	\path [17D204] (USLF2) -- (USS1);
+	\path [17D204] (USS1) -- (USS2);
+	\path [17D204] (USS2) -- (YF-Vax);
+
+	
+	% Strains for France
+	\node [middlestrain] (FranceS1) at (6.0,6.0) {IP/F1-S\textsubscript{1}};
+	\node [middlestrain] (FranceS2) at (6.0,5.0) {IP/F2-S\textsubscript{2}};
+	\node [endstrain] (Stamaril) at (6.0,4.0) {Stamaril\textsuperscript{\textregistered}-V};
+	
+	% Line connections for YF-Vax
+	\path [17D204] (AB237) -| (FranceS1);
+	\path [17D204] (FranceS1) -- (FranceS2);
+	\path [17D204] (FranceS2) -- (Stamaril);
+	
+	% Strains for Senegal
+	\node [middlestrain] (SenegalS2) at (8.0,5.0) {771-2-S\textsubscript{2}};
+	\node [endstrain] (Senegal) at (8.0,4.0) {V};
+
+	% Line connections for Senegal
+	% Line connections for YF-Vax
+	\path [17D204] (FranceS1) -| (SenegalS2);
+	\path [17D204] (SenegalS2) -- (Senegal);
+	
+	% Strains for RKI/Berna?
+	\node [middlestrain] (AB616) at (4.0,6.0) {AB616};
+	\node [middlestrain] (AB617) at (4.0,5.0) {AB617};
+	\node [middlestrain] (8366) at (4.0,4.0) {8366};
+	\node [middlestrain] (112-69S1) at (4.0,3.0) {112-69};
+%	\node [middlestrain] (112-95S2) at (5.0,2.0) {112/95};
+%	\node [endstrain] (Berna-YF) at (6.0,1.0) {Berna-YF};
+%	\node [endstrain] (Flavimun) at (4.0, 1.0) {Flavimun};
+	% Line connections for YF-Vax
+	\path [17D204] (AB237) -- (AB616);	
+	\path [17D204] (AB616) -- (AB617);
+	\path [17D204] (AB617) -- (8366);
+	\path [17D204] (8366) -- (112-69S1);
+%	\path [17D204] (112-69S1) -- (112-95S2);
+%	\path [17D204] (112-95S2) -| (Berna-YF);
+%	\path [17D204] (112-95S2) -| (Flavimun);
+
+	% Middle strains for Russia
+	\node [middlestrain] (21377) at (7.0,2.0) {213-77};
+	\node [middlestrain] (RussiaSeeds) at (7.0,1.0) {Seeds 47-97};
+	\node [endstrain] (Russia) at (7.0,0.0) {V};
+
+	% Line connections for Russia
+	\path [17D213] (112-69S1) -| (21377);
+	\path [17D213] (21377) -- (RussiaSeeds);
+	\path [17D213] (RussiaSeeds) -- (Russia);
+	
+	% Strains for 17DD
+	\node [middlestrain] (102) at (.75,-4.0) {102-S\textsubscript{1}};
+	\node [middlestrain] (993) at (.75,-5.0) {993FB013Z-S\textsubscript{2}};
+	\node [endstrain] (17DD) at (.75,-6.0) {Fiocruz-V};
+
+	% Line connections for 17DD
+	\path [17DD] (17Dlow) -| (102);
+	\path [17DD] (102) -- (993);
+	\path [17DD] (993) -- (17DD);
+	
+	% Strains for China
+	\node [middlestrain] (RF1028) at (8.0,8.0) {RF 1028};
+	\node [middlestrain] (7503) at (9.0,-1.0) {7503-2-S\textsubscript{1}};
+	\node [middlestrain] (chinaS2) at (4.0,-4.0) {S\textsubscript{2}};
+	\node [endstrain] (China) at (4.0,-5.0) {Tiantan\textsuperscript{\textregistered}-V};
+
+	% Line connections for China
+	\path [17D204] (RF1453) -| (RF1028);
+	\path [17D204] (RF1028) -| (7503);
+	\path [17D204] (7503) -| (chinaS2);
+	\path [17D204] (chinaS2) -- (China);
+    % Origin Nodes
+	\node [country] (USA_C) at (2.0,6.7) {USA};
+	\node [country] (China_C) at (9.0,0) {China};
+	\node [country] (Russia_C) at (7.0,2.0) {Russia};
+	\node [country] (Brazil_C) at (.75,-3.0) {Brazil};
+	\node [country] (Senegal_C) at (8.0,6.0) {Senegal};	
+	\node [country] (France_C) at (6.0,6.7) {France};
+					
+	\node[draw=black,thick,rounded corners=2pt,below left=2mm] at (10,-2) {%
+		\begin{tabular}{@{}r@{ }l@{}}
+		\raisebox{2pt}S1&Primary Seed\\
+		\raisebox{2pt}S2&Secondary Seed\\
+		\raisebox{2pt}V&Vaccine\\
+		\raisebox{2pt}{\tikz{\draw[gray, very thick, dashed] (0,0) -- (5mm,0);}}&National Origin\\
+		\raisebox{2pt}{\tikz{\draw[red, very thick] (0,0) -- (5mm,0);}}&Parental Strain\\
+		\raisebox{2pt}{\tikz{\draw[yellow, very thick] (0,0) -- (5mm,0);}}&Vaccine Lot\\
+		\raisebox{2pt}{\tikz{\draw[blue, very thick] (0,0) -- (5mm,0);}}&17DD\\
+		\raisebox{2pt}{\tikz{\draw[black!60!green, very thick] (0,0) -- (5mm,0);}}&17D-204\\
+		\raisebox{2pt}{\tikz{\draw[brown, very thick] (0,0) -- (5mm,0);}}&17D-213
+		\end{tabular}};
+
+\end{tikzpicture}
+%\end{document}

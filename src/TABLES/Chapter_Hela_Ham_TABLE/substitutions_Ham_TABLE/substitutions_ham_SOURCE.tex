@@ -1,0 +1,25 @@
+% This is the filler table for checking formats.
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{tabu}{X[.75,l]X[.9,l]X[1.4,l]X[.5,l]X[.75,l]X[.9,l]X[1.4,l]}
+	\rowfont[1]{\bfseries}
+		\toprule
+		\multicolumn{3}{c}{Nucleotide}            & \multicolumn{4}{c}{Amino Acid}        \\ \midrule
+		Position   & Asibi/P0 & Hamster/P7 & Gene  &   Codon  & Asibi/P0 & Hamster/P7 \\ \midrule
+	802\tnote{a}   & A		  & G 	&&&& \\
+		887        & C        & U           &       &            &          &             \\
+		1000       & G        & A           &       &            &          &             \\
+		1054       & A        & C           & E     & 27         & Q        & H           \\
+	1056\tnote{a}  & A        & G           & E     & 28         & D        & G           \\		
+		1437       & A        & C           & E     & 155        & D        & A           \\
+		1941       & A        & G           & E     & 323        & K        & R           \\
+		1965       & A        & G           & E     & 331        & K        & R           \\
+		2779       & U        & C           &       &            &          &             \\
+	3274\tnote{a}  & G        & A           &       &            &          &             \\
+		3821       & A        & G           & NS2A  & 48         & T        & A           \\
+	4864\tnote{a}  & G        & A          	& 	    &            &          &             \\
+		7178       & G        & A           & NS4B  & 98         & V        & I           \\
+		8917       & C        & U           &       &            &          &             \\ \bottomrule
+\end{tabu}

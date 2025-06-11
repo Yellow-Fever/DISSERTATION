@@ -1,0 +1,31 @@
+% This is the filler table for checking formats.
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{tabu}{X[1.5,l]X[l]X[l]X[l]X[l]X[l]X[l]}
+	\rowfont[1]{\bfseries}
+\toprule
+                        &      &\multicolumn{2}{l}{Nucleotide Window\tnote{a}}   &\multicolumn{2}{l}{Codon Window\tnote{b}} & \\
+Strain                  & Gene & Start  & End & Start  & End  & \emph{dN/dS}  \\ \midrule
+& E    & 2189             & 2249           & 406         & 426       & 4.605 \\
+& E    & 2180             & 2240           & 403         & 423       & 3.947 \\
+& E    & 2171             & 2231           & 400         & 420       & 3.693 \\
+& E    & 2165             & 2225           & 398         & 418       & 3.329 \\
+Asibi & E    & 2156             & 2216           & 395         & 415       & 3.305 \\
+& E    & 1013             & 1073           & 14          & 34        & 2.887 \\
+& E    & 1028             & 1088           & 19          & 39        & 2.655 \\
+& NS1  & 2456             & 2516           & 2           & 22        & 2.641 \\
+& E    & 1001             & 1061           & 10          & 30        & 2.501 \\
+& NS1  & 2465             & 2525           & 5           & 25        & 2.485 \\ \midrule
+& NS2A & 4052             & 4112           & 182         & 202       & 1.800 \\
+& NS2A & 4025             & 4085           & 173         & 193       & 1.792 \\
+& NS5  & 8312             & 8372           & 226         & 246       & 1.740 \\
+& NS5  & 8294             & 8354           & 220         & 240       & 1.722 \\
+Hamster/P7 & NS1  & 2813             & 2873           & 121         & 141       & 1.688 \\
+& NS5  & 8300             & 8360           & 222         & 242       & 1.649 \\
+& NS5  & 8228             & 8288           & 198         & 218       & 1.648 \\
+& NS2A & 3746             & 3806           & 80          & 100       & 1.641 \\
+& NS3  & 5033             & 5093           & 155         & 175       & 1.638 \\
+& NS4B & 7499             & 7559           & 205         & 225       & 1.622 \\ \bottomrule
+\end{tabu}

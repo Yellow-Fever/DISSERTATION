@@ -1,0 +1,28 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[table]{xcolor}
+\usepackage{rotating,tabu}
+\usepackage{booktabs,threeparttablex,multirow}
+\begin{document}
+
+\begin{table}[h]
+
+		\centering
+		\begin{ThreePartTable}
+			
+			\caption{Amino acid variants concordantly observed in both SA14-14-2/P1 and SA14-14-2/P2, 
+				relative to the newly sequenced SA14 strain.}
+			
+			\label{my-label}
+			\taburowcolors [3]1{white .. gray!20}
+			\input{variants_concordant_SOURCE}
+			\begin{tablenotes}
+				\item[a] Consensus nucleotide or residue in the newly computed consensus sequence.
+				\item[b] Variant nucleotide or residue in the alignment, which is observed below the consensus frequency.
+				\item[c] Variant residue is a revertant to wild-type SA14 genotype.
+
+			\end{tablenotes}
+		\end{ThreePartTable}
+\end{table}
+\end{document}
+

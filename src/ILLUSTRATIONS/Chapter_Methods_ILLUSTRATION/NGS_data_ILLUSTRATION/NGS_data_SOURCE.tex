@@ -1,0 +1,31 @@
+% Tikz flowchart to show the passage history of 17D and FNV.
+
+%block styles for the chart.
+\tikzstyle{parent} = [rectangle, draw, fill=blue!20, 
+text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{intermediate} = [diamond, draw, fill=blue!20, 
+text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{vaccine} = [diamond, draw, fill=blue!20, 
+text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{line} = [draw]
+\tikzstyle{arrow} = [thick,->,>=stealth,draw]
+
+\begin{tikzpicture}[auto]
+	%nodes for Asibi
+	\node[parent](Asibi){Asibi Strain};
+	\node[parent, right of=Asibi](FVV){French Viscerotropic Virus};
+	\node[intermediate, below of=FVV](mouse_adapted){Mouse adapted French Strain};
+	\node[intermediate, below of=mouse_adapted](FNV){French Neurotropic Virus};
+	%nodes for 17D
+	\node[intermediate, below of=Asibi](17D){17D};
+	\node[intermediate, below of=17D](17D_vaccines){17D Vaccines};
+
+	%edges
+	\path[line,dashed] (Asibi) -- (FVV);
+	%Paths for Asibi/17D
+	\path[arrow] (Asibi) -- (17D);
+	\path[arrow] (17D) -- (17D_vaccines);
+	%Paths for FVV/FNV
+	\path[arrow] (FVV) -- (mouse_adapted);
+	\path[arrow] (mouse_adapted) -- (FNV);
+\end{tikzpicture}

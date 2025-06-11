@@ -1,0 +1,24 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[table]{xcolor}
+\usepackage{rotating,tabu}
+\usepackage{booktabs,threeparttablex,multirow}
+\begin{document}
+
+\begin{table}[h]
+	\centering
+	\begin{ThreePartTable}
+
+	\caption{Codon windows with high dN/dS ratios.}
+
+	\label{my-label}
+	\taburowcolors [3]1{white .. gray!20}
+	\input{DNDS_20codonhighest_JEV_SOURCE}
+	\begin{tablenotes}
+	\item[a] Sixty nucleotides, inclusive.
+	\item[b] Twenty residues, inclusive.	
+	\end{tablenotes}
+	\end{ThreePartTable}
+\end{table}
+\end{document}
+

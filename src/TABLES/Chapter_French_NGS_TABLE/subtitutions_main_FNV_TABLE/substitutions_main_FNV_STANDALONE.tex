@@ -1,0 +1,27 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{threeparttablex}
+\usepackage[table]{xcolor}
+\usepackage{tabu,rotating,ltablex}
+\usepackage{booktabs,lscape}
+
+\begin{document}
+
+%\begin{landscape}
+%	\centering
+%	
+		\begin{ThreePartTable}
+
+			\taburowcolors [2]1{white .. gray!20}
+
+		\input{substitutions_main_FNV_SOURCE}
+		\begin{tablenotes}
+			\item[a]Conserved at least 75 percent for FNV-IP, FNV-Yale, FNV-FC, and FNV-NT strains.
+			\item[b]Intersection of sequence with the Asibi strain or is observed in 17D attenuation.
+			\item[c]Not conserved in FNV-NT.
+		\end{tablenotes}
+		\end{ThreePartTable}
+		\label{my-label}
+%\end{landscape}
+\end{document}
+

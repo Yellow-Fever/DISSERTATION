@@ -1,0 +1,27 @@
+\documentclass{report}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[table]{xcolor}
+\usepackage{rotating,tabu, longtable}
+\usepackage{booktabs,threeparttablex,multirow}
+\begin{document}
+
+\begin{table}[h]
+	\centering
+	\begin{ThreePartTable}
+
+	\caption{Amino acid substitutions in SA14-14-2 vaccine strains, in reference to the newly-sequenced,
+		wild-type SA14 strain.}
+
+	\label{my-label}
+	\taburowcolors [2]1{white .. gray!20}
+	\input{substitutions_main_JEV_SOURCE}
+	\begin{tablenotes}
+	\item[a] Sequenced in this study.	
+	\item[b] Not published.
+	\item[c] Reported by Aihara et. al.  1991.
+	\item[d] Reported by Song et. al 2012.
+	\end{tablenotes}
+	\end{ThreePartTable}
+\end{table}
+\end{document}
+

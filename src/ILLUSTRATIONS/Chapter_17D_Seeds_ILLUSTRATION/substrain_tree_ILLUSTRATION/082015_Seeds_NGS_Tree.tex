@@ -1,0 +1,119 @@
+\documentclass[border=0.5cm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes,calc}
+\begin{document}
+
+\tikzstyle{every node}=[font=\footnotesize]
+\tikzstyle{17DD} = [draw,blue, thick]
+\tikzstyle{17D204} = [draw, black!60!green, thick]
+\tikzstyle{17D213} = [draw, black!60!brown, thick]
+\tikzstyle{middlestrain} = [rectangle, draw, fill=white, minimum height=1em, text centered]
+\tikzstyle{endstrain} = [rectangle, draw, fill=yellow,
+minimum height=1em, text centered, align=center]
+\tikzstyle{parentstrain} = [rectangle, draw, fill=orange,
+minimum height=1em, text centered]
+\tikzstyle{country} = [rectangle, draw, fill=gray!40, dashed,
+minimum height=1em, text centered, opacity=1, text opacity=1]
+
+
+\begin{tikzpicture}[node distance = 2cm, auto, font=\sffamily]
+%	\draw[help lines] (0,0) grid (7,7);
+
+
+	%Basal Strains, with passage level nodes directly following.
+	\node [parentstrain] (Asibi) at (1,9.5) {Asibi};
+	%	\node at (-0.4,13){0};	
+	\node [middlestrain] (17D) at (1,9.0) {17D};
+	%	\node at (-0.4,12.5){176};
+	\node [middlestrain] (17Dlow) at (1,8.5) {17D Low};
+	%	\node at (-0.4,12){195};
+	\node [middlestrain] (17D204) at (1,8.0) {17D-204};
+	%	\node at (-0.4,11.5){204};
+	\node [middlestrain] (Columbia88) at (1,7.5) {Columbia 88};
+	\node [middlestrain] (RF1453) at (1,7) {RF145-3};
+	\node [middlestrain] (RF505) at (6,7.5) {RF505};
+	\node [middlestrain] (AB237) at (3,5) {AB237};
+%	\node [middlestrain] (RMLYF-1) at (4.0,9.0) {RML YF-1};
+%	\node [middlestrain] (RMLYF-10) at (4.0,8.0) {RML YF-10};
+%	\node [middlestrain] (AB237) at (4.0,7.0) {AB237};
+	% Line connections for YF-Vax
+	\path [17D204] (Asibi) -- (17D);
+	\path [17D204] (17D) -- (17Dlow);
+	\path [17D204] (17Dlow) -- (17D204);
+	\path [17D204] (17D204) -- (Columbia88);
+	\path [17D204] (Columbia88) -- (RF1453);
+	\path [17D204] (Columbia88) -- (RF505);
+	\path [17D204] (RF1453) -| (AB237);
+%	\path [17D204] (RMLYF-1) -- (RMLYF-10);
+%	\path [17D204] (RMLYF-10) -- (AB237);
+	
+	%Nodes, YF-Vax
+	\node [endstrain] (YF-Vax1995) at (1.5,4) {YF-Vax\textsuperscript{\textregistered}-V(1995) \\ \scriptsize \bf (237)};
+	\node [endstrain] (YF-Vax2012) at (4.5,4) {YF-Vax\textsuperscript{\textregistered}-V(2012) \\ \scriptsize \bf (237)};
+	
+	% Line connections for YFVax
+		\path [17D204] (AB237) |- (YF-Vax1995);
+		\path [17D204] (AB237) |- (YF-Vax2012);
+
+	%Nodes, National Drug Company
+	\node [endstrain] (NDC6676) at (1,6) {NDC6676-S\textsubscript{2} \\ \scriptsize \bf (233)};
+	\node [endstrain] (NDC6677) at (1,5) {NDC6677-V \\ \scriptsize \bf (234)};
+	
+	% Line connections for NDC
+		\path [17D204] (RF1453) -- (NDC6676);
+		\path [17D204] (NDC6676) -- (NDC6677);
+
+	%Nodes, Europe
+	\node [endstrain] (YFS11) at (5.0,6.0) {YFS/11-S\textsubscript{2} \\ \scriptsize \bf (233)};
+	\node [endstrain] (5114) at (7.0,6.0) {5114.15-S\textsubscript{2} \\ \scriptsize \bf (233)};
+	
+	% Line connections for Europe
+		\path [17D204] (RF505) |- (YFS11);
+		\path [17D204] (RF505) |- (5114);
+	
+	% Nodes for 17DD
+	\node [endstrain] (SLII) at (0,1.5) {SLII-75-I-S\textsubscript{2} \\ \scriptsize \bf (286)};
+	\node [endstrain] (Colombia) at (2,0) {Colombia-V \\ \bf (287)};
+	
+	% Line connections for Europe
+		\path [17DD] (17Dlow) -| (SLII);
+		\path [17DD] (SLII) -| (Colombia);
+
+	%Nodes, from 213
+	\node [endstrain] (21377) at (7.0,3.25) {213/77-S\textsubscript{1} \\ \scriptsize \bf (237)};
+	\node [endstrain] (21381) at (6.0,2.0) {213-B2-81-V \\ \scriptsize \bf (239)};
+	\node [endstrain] (Russia) at (4.0,2.0) {Russia/SW13 \\ \scriptsize \bf (239)};
+	\node [endstrain] (Nigeria) at (8.0,2.0) {Nigeria \\ \scriptsize \bf (Unknown)};
+
+	% Line connections for 213
+	\path [17D213] (AB237) -| (21377);
+	\path [17D213] (21377) -| (Russia);
+	\path [17D213] (21377) |- (21381);
+	\path [17D213] (21377) |- (Nigeria);
+	
+
+
+
+    % Origin Nodes
+%	\node [country] (USA_C) at (2.0,6.7) {USA};
+%	\node [country] (China_C) at (9.0,0) {China};
+%	\node [country] (Russia_C) at (7.0,1.5) {Russia};
+%	\node [country] (Brazil_C) at (1.0,-3.0) {Brazil};
+%	\node [country] (Senegal_C) at (8.0,6.0) {Senegal};	
+%	\node [country] (France_C) at (6.0,6.7) {France};
+					
+	\node[draw=black,thick,rounded corners=2pt,below left=2mm] at (7.25,1.5) {%
+		\begin{tabular}{@{}r@{ }l@{}}
+		\raisebox{2pt}S1&Primary Seed\\
+		\raisebox{2pt}S2&Secondary Seed\\
+		\raisebox{2pt}V&Vaccine\\
+	%	\raisebox{2pt}{\tikz{\draw[gray, very thick, dashed] (0,0) -- (5mm,0);}}&National Origin\\
+		\raisebox{2pt}{\tikz{\draw[red, very thick] (0,0) -- (5mm,0);}}&Parental Strain\\
+		\raisebox{2pt}{\tikz{\draw[yellow, very thick] (0,0) -- (5mm,0);}}&Studied Vaccine Lot\\
+		\raisebox{2pt}{\tikz{\draw[blue, very thick] (0,0) -- (5mm,0);}}&17DD\\
+		\raisebox{2pt}{\tikz{\draw[black!60!green, very thick] (0,0) -- (5mm,0);}}&17D-204\\
+		\raisebox{2pt}{\tikz{\draw[black!60!brown, very thick] (0,0) -- (5mm,0);}}&17D-213
+		\end{tabular}};
+
+\end{tikzpicture}
+\end{document}
