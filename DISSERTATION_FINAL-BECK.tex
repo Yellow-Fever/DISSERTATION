@@ -1,0 +1,722 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  disstemplate.tex, to be compiled with latex.		     %
+%%  08 April 2002	Version 4				     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%								     %
+%%  Writing a Doctoral Dissertation with LaTeX at		     %
+%%	the University of Texas at Austin			     %
+%%								     %
+%%  (Modify this ``template'' for your own dissertation.)	     %
+%%								     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\documentclass[11pt]{report}	% The documentclass must be ``report''.
+
+\usepackage{./src/STYLES/TEMPLATE_UTDISS/utdiss2-05}  		% Dissertation package style file.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Optional packages used for this sample dissertation. If you don't  %
+% need a capability in your dissertation, feel free to comment out   %
+% the package usage command.					     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc}
+%%%% This is the Bibliography handler.
+\usepackage[backend=biber,
+		style=authoryear,
+		citestyle=authoryear,
+		sorting=nyt,
+		url=false,
+		maxbibnames=50,
+		firstinits=true,
+		dashed=false]{biblatex}
+\addbibresource[datatype=bibtex]{./src/BIBLIOGRAPHY/Papers_library_ENTIRE.bib}
+%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%This alters the biber.conf file to get rid of
+%funny characters in the abstract listings.
+\begin{filecontents*}{biber.conf}
+	<config>
+	<sourcemap>
+	<maps datatype="bibtex" map_overwrite="1">
+	<map>
+	<map_step map_field_set="ABSTRACT" map_null="1"/>
+	</map>
+	</maps>
+	</sourcemap>
+	</config>
+\end{filecontents*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage[nolists]{endfloat}
+%\renewcommand{\efloatseparator}{\mbox{}}
+
+\usepackage[table]{xcolor}
+\usepackage{caption}
+
+%%%% This is a remap of special characters exported from Papers 3 to the biblatex file.
+
+%\DeclareUnicodeCharacter{0301}{/}
+%\DeclareUnicodeCharacter{00A0}{ }
+%%%%
+
+\captionsetup{skip=10pt,labelfont=bf}
+\usepackage{texshade}
+\usepackage{lipsum} %for generating test text.
+\usepackage{amsmath,amsthm,amsfonts,amscd} 
+				% Some packages to write mathematics.
+\usepackage{float}
+\usepackage[T1]{fontenc}				
+\usepackage{eucal} 	 	% Euler fonts
+\usepackage{verbatim}      	% Allows quoting source with commands.
+\usepackage{makeidx}       	% Package to make an index.
+\usepackage{graphicx}         	% Allows inclusion of eps files.
+\usepackage{url}		% Allows good typesetting of web URLs.	
+\usepackage{microtype}
+
+%\usepackage[colorinlistoftodos,obeyFinal,textsize=scriptsize,color=green!40]{todonotes}
+%\usepackage{morewrites}
+
+% These are the relative graphic folders to the directory of this file.
+\graphicspath{{./src/FIGURES/}{./src/ILLUSTRATIONS/}{./src/TABLES}}
+%Use newfloat to create the counter and output for Illustrations,
+     %separate from figures and tables.
+%\usepackage{newfloat}
+\usepackage[titles]{tocloft}
+\usepackage{chemfig}
+
+\usepackage{rotating}
+\usepackage{tabu,booktabs,threeparttablex,lscape}
+\usepackage{longtable}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{draftcopy}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{eso-pic}
+\usepackage{ifthen}
+\usepackage[toc,acronym]{glossaries}
+
+%%%Make the GLossary
+\makeglossaries
+\loadglsentries{./src/GLOSSARY/GLOSSARY.tex}
+%%%%%%%
+
+\newboolean{linktoc}
+\setboolean{linktoc}{true}  %%% uncomment to show answers properly
+%\setboolean{linktoc}{false}  %%% comment to show answers properly
+
+
+%This code puts a hyperlink to the table of contents twice in the right
+%margin of every page.
+%\newcommand\AtPageUpperRight[1]{\AtPageUpperLeft{%
+%		\put(\LenToUnit{\paperwidth},\LenToUnit{-0.3\paperheight}){#1}%
+%	}}%
+%	\newcommand\AtPageLowerRight[1]{\AtPageLowerLeft{%
+%			\put(\LenToUnit{\paperwidth},\LenToUnit{0.3\paperheight}){#1}%
+%		}}%
+%		
+%		\ifthenelse{\boolean{linktoc}}%
+%		{%
+%			\AddToShipoutPictureBG{%
+%				\AtPageUpperRight{\put(-70,0){\hyperref[toc]{Go to TOC}}}
+%				\AtPageLowerRight{\put(-70,0){\hyperref[toc]{Go to TOC}}}
+%			}%
+%		}%
+%		{}%
+
+% This is a new command that is occasionally used in tables, which allows the rotation of table elements.		
+\newcommand*\rot{\rotatebox{270}}
+
+% Increase space between bottom of graphics and captions.
+\setlength{\belowcaptionskip}{17pt plus 3pt minus 2pt}
+
+%% Define a counter for the inserted todonotes.
+% \newcounter{todoListItems}
+% \newcommand{\todoTrans}[2][ ]{
+%   % Increment counter
+%   \addtocounter{todoListItems}{1}
+%   \todo[%
+%     caption={\protect\hypertarget{todo\thetodoListItems}{}},
+%#1] {#2 \hfill\hyperlink{todo\thetodoListItems}{$\uparrow$}
+%   }
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Andrew Stephen Beck}  	% Required
+
+\address{1414 Church Street\\ Upper Apartment \\
+	Galveston, TX 77550}  % Required
+
+\title{Population Structure of Yellow Fever Virus:\\ 
+		Influence of Viral Diversity on Vaccine Attenuation}
+                                                    % Required
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NOTICE: The total number of supervisors and other members %%%%%%%%%%
+%%%%%%%%%%%%%%% MUST be seven (7) or less! If you put in more, %%%%%%%
+%%%%%%%%%%%%%%% they are put on the page after the Committee %%%%%%%%%
+%%%%%%%%%%%%%%% Certification of Approved Version page. %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Enter names of the supervisor and co-supervisor(s), if any,
+% of your dissertation committee. Put one name per line with
+% the name in square brackets. The name on the last line, however,
+% must be in curly braces.
+%
+% If you have only one supervisor, the entry below will read:
+%
+%	\supervisor
+%		{Supervisor's Name}
+%
+% NOTE: Maximum three supervisors. Minimum one supervisor.
+% NOTE: The Office of Graduate Studies will accept only two supervisors!
+% 
+%
+\supervisor
+	{Alan D.T. Barrett, Ph.D.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Enter names of the other (non-supervisor) members(s) of your
+% dissertation committee. Put one name per line with the name
+% in square brackets. The name on the last line, however, must
+% be in curly braces.
+%
+% NOTE: Maximum six other members. Minimum zero other members.
+% NOTE: The Office of Graduate Studies may restrict you to a total
+%	of six committee members.
+%
+%
+\committeemembers
+	[Richard B. Pyles, Ph.D.]
+	[Tian Wang, Ph.D.]
+	[Alexander Freiberg, Ph.D.]
+	{Michael Holbrook, Ph.D.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\previousdegrees{B.S.}
+     % The abbreviated form of your previous degree(s).
+     % E.g., \previousdegrees{B.S., MBA}.
+     %
+     % The default value is `B.S., M.S.'
+
+\graduationmonth{December}      
+     % Graduation month, either May, August, or December, in the form
+     % as `\graduationmonth{May}'. Do not abbreviate.
+     %
+     % The default value (either May, August, or December) is guessed
+     % according to the time of running LaTeX.
+
+\graduationyear{2015}   
+     % Graduation year, in the form as `\graduationyear{2001}'.
+     % Use a 4 digit (not a 2 digit) number.
+     %
+     % The default value is guessed according to the time of 
+     % running LaTeX.
+
+\typist{the author}       
+     % The name(s) of typist(s), put `the author' if you do it yourself.
+     % E.g., `\typist{Maryann Hersey and the author}'.
+     %
+     % The default value is `the author'.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commands for master's theses and reports.			     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% If the degree you're seeking is NOT Doctor of Philosophy, uncomment
+% (remove the % in front of) the following two command lines (the ones
+% that have the \ as their second character).
+%
+%\degree{MASTER OF ARTS}
+%\degreeabbr{M.A.}
+
+% Uncomment the line below that corresponds to the type of master's
+% document you are writing.
+%
+%\masterreport
+%\masterthesis
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some optional commands to change the document's defaults.	     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\singlespacing
+%\doublespacing
+\oneandonehalfspacing
+
+%\singlespacequote
+\oneandonehalfspacequote
+
+\topmargin 0.125in	% Adjust this value if the PostScript file output
+			% of your dissertation has incorrect top and 
+			% bottom margins. Print a copy of at least one
+			% full page of your dissertation (not the first
+			% page of a chapter) and measure the top and
+			% bottom margins with a ruler. You must have
+			% a top margin of 1.5" and a bottom margin of
+			% at least 1.25". The page numbers must be at
+			% least 1.00" from the bottom of the page.
+			% If the margins are not correct, adjust this
+			% value accordingly and re-compile and print again.
+			%
+			% The default value is 0.125"
+
+		% If you want to adjust other margins, they are in the
+		% utdiss2-nn.sty file near the top. If you are using
+		% the shell script Makediss on a Unix/Linux system, make
+		% your changes in the utdiss2-nn.sty file instead of
+		% utdiss2.sty because Makediss will overwrite any changes
+		% made to utdiss2.sty.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some optional commands to be tested.				     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% If there are 10 or more sections, 10 or more subsections for a section,
+% etc., you need to make an adjustment to the Table of Contents with the
+% command \longtocentry.
+%
+%\longtocentry 
+
+%%%centers all graphics.
+\makeatletter
+\g@addto@macro\@floatboxreset{\centering}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Some math support.					     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	Theorem environments (these need the amsthm package)
+%
+%% \theoremstyle{plain} %% This is the default
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{ax}{Axiom}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}[section]
+\newtheorem*{notation}{Notation}
+
+%\numberwithin{equation}{section}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Macros.							     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	Here some macros that are needed in this document:
+
+
+\newcommand{\latexe}{{\LaTeX\kern.125em2%
+                      \lower.5ex\hbox{$\varepsilon$}}}
+
+\newcommand{\amslatex}{\AmS-\LaTeX{}}
+
+\chardef\bslash=`\\	% \bslash makes a backslash (in tt fonts)
+			%	p. 424, TeXbook
+
+\newcommand{\cn}[1]{\texttt{\bslash #1}}
+
+\makeatletter		% Starts section where @ is considered a letter
+			% and thus may be used in commands.
+\def\square{\RIfM@\bgroup\else$\bgroup\aftergroup$\fi
+  \vcenter{\hrule\hbox{\vrule\@height.6em\kern.6em\vrule}%
+                                              \hrule}\egroup}
+\makeatother		% Ends sections where @ is considered a letter.
+			% Now @ cannot be used in commands.
+
+\makeindex    % Make the index
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Declare a float environment to handle the illustrations.			     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newListOf{illustration}{loi}{List of Illustrations}
+
+%\newlistof{illustration}{loi}{List of Illustrations}
+%\DeclareFloatingEnvironment[fileext=loi,listname={List of Illustrations},name=Illustration]{illustration}
+%\listof{illustration}{loi}{List of Illustrations}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		The document starts here.			     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%\listoftodos[Corrections]
+\pagebreak
+\copyrightpage          % Produces the copyright page.
+
+
+%
+% NOTE: In a doctoral dissertation, the Committee Certification page
+%		(with signatures) is BEFORE the Title page.
+%	In a masters thesis or report, the Signature page
+%		(with signatures) is AFTER the Title page.
+%
+%	If you are writing a masters thesis or report, you MUST REVERSE
+%	the order of the \commcertpage and \titlepage commands below.
+%
+\commcertpage           % Produces the Committee Certification
+			%   of Approved Version page (doctoral)
+			%   or Signature page (masters).
+			%		20 Mar 2002	cwm
+
+\titlepage              % Produces the title page.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dedication and/or epigraph are optional, but must occur here.      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+\begin{dedication}
+\index{Dedication@\emph{Dedication}}%
+To my wife, Courtney. Your support of my studies has been utterly 
+sacrificial, amounting to a debt that no man could repay.  Your 
+faith in me has been, without comparison, the most healing and 
+constructive human influence I have experienced.
+\end{dedication}
+
+
+\begin{acknowledgments}		% Optional
+\index{Acknowledgments@\emph{Acknowledgments}}%
+Gratitude is due to my parents, Leon and Denise Beck. Dad, I'll not forget that my first view
+through a microscope happened under your supervision. Mom, you were unyielding in your demands
+that myself and the brothers should value education. Many thanks to you both for your sacrifices that were so frequently
+measured in combinations of time, money, and aggravation.
+
+To my mentor, Alan Barrett. I am very, very grateful for your insistence that my weaknesses
+should not be indulged. Behind your back, you are known as a strong advocate for your student's
+interests. I believe this, too. So let it be known in print. 
+
+To the faculty and staff at UTMB, especially the department of Pathology. Studying at this institution has been
+one of my life's greatest privileges. Many thanks for taking the risk on me. I hope to justify the investment.
+
+To my dissertation committee members, Rick Pyles, Tina Wang, Alex Freiberg, and Mike Holbrook: Many thanks for your time
+and service. I hope the content is at least interesting enough to for you to read without falling asleep.
+
+To my in-laws, no order implied. Deb and John, you've been endlessly supportive of Courtney and myself,
+especially during the holiday trips. You've also shown interest in my work, which has been
+really nice. Dave and Cindy, you have also showed graciousness to Court and I in the last few; I'm glad to hear about your own present adventures. I'm especially thankful for the four of you to have visited us as many times as you have. 
+
+Sam and Kris, you've allowed me to move Court far away, which has had it's own difficulties. I am incredibly 
+grateful for your kindness to us at great distance. Whenever we return to Maryland, you somehow treat us as if we've never left. Also,
+your kids are adorable.
+
+To my two best friends, Alex Myers and Rob Cramer, no order implied. No man should be
+without friends of such quality. I look forward to our shared milestones, and many raised glasses
+of scotch.
+
+To my lab members, past and present. This includes Li Li, Melissa Whiteman, Vanessa Sarathy, Trevor Pitcher,
+Amy Schuh, Allison McMullen, Brian Mann, Natalie Collins, Daniele Swetnam, Courtney Parker, Jackie Blanc, and others. 
+
+To my brothers Tim, Seth, James, John, and David: I am thrilled for us to be adults,
+and to finally relate as peers. You guys have been a constant and positive influence,
+proving that among my close relationships, I have much for which to be thankful.
+
+To Darren and Heather Parker, you are first among many unequals.
+
+To Walt and Debbie Mills, who shine brightly in the constellation of my surrogate family members.
+
+To my community at Galveston Bible Church, you have been a adoptive home and family during these years. To have functioned as a member in this lovely little group has been one of my life's other great privileges. Particular thanks are owed to Clay and Karla Thomas, Bob and Jeanette Duke, Rick and Lonni Mallahan, Tim and Susie Bjorklund, Nick and Bekka Bergren, Danny and Marian Davis, John and Virginia Weber, Stephen and Jessica Villanueva, Ben and Sarah Thomas, Brad and Kim Linsley, Jason and Kella Dohring, Richard ``Dixie'' D'Albergo, Matt Irwin, James Beebe, Andy Krauss, and David Pauling.
+
+To my unborn daughter, Eliana. Although you will likely not read this work, and you may even think of it as 
+that boring stuff your father does, remember that it is virtuous to consider the health of others. Also, we will be fully vaccinating you.
+\end{acknowledgments}
+
+
+% The abstract is required. Note the use of ``utabstract'' instead of
+% ``abstract''! This was necessary to fix a page numbering problem.
+% The abstract heading is generated automatically.
+% Do NOT use \begin{abstract} ... \end{abstract}.
+%
+\utabstract
+\index{Abstract}%
+\indent
+Yellow fever virus (YFV) is the prototype of all arthropod-borne viruses, the study of which encompasses some of the landmark 
+paradigm shifts in modern vaccinology. Recently, studies on the lifecycle of RNA viruses have indicated that population structure of these
+viruses is in many cases complex, which in itself may confer fitness within hosts or host ecologies. Thus, these dissertation studies were performed
+under a set of hypotheses that the YFV population structure is in itself complex, and that features of these populations define a signature that
+differentiates wild-type from serially-passaged and attenuated vaccine strains. Using deep sequencing techniques, a comparison was made between the
+prototype West African YFV strain Asibi, and a commercial aliquot of the YFV 17D-204 vaccine. \emph{In silico} methods revealed the vaccine to be of lower
+diversity than the parental strain, leading to subsequent hypotheses that the level of complexity in the vaccine populations would be related to phenotypic stabilities. A deep sequencing study was performed comparing a set of rare 17D vaccine seeds, which represent all main
+lineage (substrain) relationships in modern production of the vaccine, and millions of doses administered. The population structures of the vaccine seeds
+were found to be stable, showing both low diversity and repeatability of subpopulation content. A deep sequencing study was performed on a set of institutional collection strains representing the discontinued YFV French neurotropic vaccine (FNV), which was developed concurrently to 17D. FNV strains with high neurovirulence contained homogeneity in their population structures, showing that the neurotropic adverse events caused by FNV were the result of mouse brain adaptation to attenuate. A deep sequencing study of an adapted strain
+of Asibi which causes viscerotropy in hamsters was shown to be of low complexity, suggesting that YFV disease of the liver is rare due to low content of viscerotropic alleles. Finally as confirmation, the Japanese encephalitis vaccine strain SA14-14-2 was compared to its wild-type parental strain SA14 by deep sequencing, revealing that loss of diversity for 
+the vaccine was localized to regions of the genome previously thought to influence pathogenicity. The combined results from both JEV and YFV suggest that population studies are
+useful in the control of empiric vaccine stability and monitoring of safety.
+
+\tableofcontents\label{toc}   % Table of Contents will be automatically
+                   % generated and placed here.
+
+\pagebreak
+
+%\chapter*{Acronyms}
+%\addcontentsline{toc}{chapter}{Acronyms}
+\printglossary[type=\acronymtype]
+
+\listoftables      % List of Tables and List of Figures will be placed
+
+\listoffigures     % here, if applicable.
+
+%% this is the main bibliography.
+\begin{refsection}
+
+
+%This is from the new, custom float.
+
+%\listofillustrations     % here, if applicable.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Actual text starts here.					     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Including external files for each chapter makes this document simpler,
+% makes each chapter simpler, and allows for generating test documents
+% with as few as zero chapters (by commenting out the include statements).
+% This allows quicker processing by the Makediss command file in case you
+% are not working on a specific, long and slow to compile chapter. You
+% can even change the chapter order by merely interchanging the order
+% of the include statements (something I found helpful in my own
+% dissertation).
+
+\include{./src/CHAPTERS/chapter-INTRODUCTION/chapter-INTRODUCTION}
+%\include{./src/CHAPTERS/chapter-METHODS/chapter-METHODS}
+%\include{./src/CHAPTERS/chapter-Asibi_17D_NGS/chapter-Asibi_17D_NGS}
+%\include{./src/CHAPTERS/chapter-17D_Seeds_NGS/chapter-17D_Seeds_NGS}
+%\include{./src/CHAPTERS/chapter-French_NGS/chapter-French_NGS}
+%\include{./src/CHAPTERS/chapter-Hela_Hamster/chapter-Hela_Hamster}
+%\include{./src/CHAPTERS/chapter-JEV_Vaccine/chapter-JEV_Vaccine}
+%\include{./src/CHAPTERS/chapter-DISCUSSION/chapter-DISCUSSION}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendix/Appendices                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% If you have only one appendix, use the command \appendix instead
+% of \appendices.
+%
+\appendix
+\index{Appendices@\emph{Appendices}}%
+
+\include{chapter-appendix1}
+
+%\include{chapter-appendix2}
+
+%\include{chapter-appendix3}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Generate the bibliography.					     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%								     %
+% NOTE: For master's theses and reports, NOTHING is permitted to     %
+%	come between the bibliography and the vita. The command      %
+%	to generate the index (if used) MUST be moved to before      %
+%	this section.						     %
+%								     %
+%\nocite{*}      % This command causes all items in the 		     %
+                % bibliographic database to be added to 	     %
+                % the bibliography, even if they are not 	     %
+                % explicitly cited in the text. 		     %
+		%						     %
+			     %
+
+\setlength\bibitemsep{.2cm} % Increse the separation of the bibliography entries.
+
+\newrefcontext[sorting=nyt]
+\printbibliography[heading=bibintoc,title={Bibliography}]
+\index{Bibliography@\emph{Bibliography}}
+\end{refsection}
+%			     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Generate the index.						     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%								     %
+% NOTE: For master's theses and reports, NOTHING is permitted to     %
+%	come between the bibliography and the vita. This section     %
+%	to generate the index (if used) MUST be moved to before      %
+%	the bibliography section.				     %
+%								     %
+%\printindex%    % Include the index here. Comment out this line      %
+%		% with a percent sign if you do not want an index.   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Vita page.							     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{vita}
+Andrew Stephen Beck was born in Baltimore, Maryland on February 16th,
+1982, the son of Leon Paul Beck, Jr. and Denise Ann Beck. He received
+the Bachelor of Science degree in 2004 from Loyola College in Baltimore, Maryland, majoring in biology
+and minoring in classical civilization. Following undergraduate
+studies, he held a number of technical positions in the defense sector in the 
+Baltimore/Washington area, focusing initially on environmental chemistry and 
+bioremediation, finally taking a position at the United States Army Medical Research Institute
+of Infectious Diseases (USAMRIID) in Frederick, MD. He then enrolled at the University 
+of Texas Medical Branch in 2009, pursuing doctoral studies through the 
+Experimental Pathology program of the graduate school of biomedical sciences. 
+He married Courtney Moylan Toms on June 7, 2008.
+
+%%\\Education\\
+%%Bachelor of Science in Biology, Loyola College in Maryland, 2004
+%%\\Publications\\
+%%\\Abstracts\\
+%%\\Summary of Dissertation\\
+%%Yellow Fever Virus is the most awesome virus in the entire world, you see.
+
+\end{vita}
+
+\chapter*{Curriculum Vitae}
+\addcontentsline{toc}{chapter}{Curriculum Vitae}
+
+\tabulinesep=1.2mm
+
+\begin{center}
+\textbf{\LARGE Andrew Stephen Beck}\\
+\textbf{andrew.s.beck@gmail.com}
+\end{center}
+
+\begin{minipage}[ht]{0.48\textwidth}
+	1414 Church Street\\
+	Upper Apartment\\
+	Galveston, TX 77550\\
+	(443)865-5372
+\end{minipage}
+\begin{minipage}[ht]{0.48\columnwidth}
+	University of Texas Medical Branch\\ 
+	Department of Pathology\\
+	Barrett Laboratory\\
+	MS 0609\\
+	(409)772-2547
+\end{minipage}
+
+
+\section*{Education}
+\begin{tabu} to \textwidth {X[.25,r]|X[L]}
+	2009--present&\textbf{PhD Candidate, Experimental Pathology}\newline University of Texas Medical Branch\newline Galveston, TX\\
+	2000--2004&\textbf{BS, Biology}\newline Loyola College\newline Baltimore, MD\\
+\end{tabu}
+
+\section*{Grants and Support}
+\begin{tabu} to \textwidth {X[.25,r]|X[L]}
+	2013--2015&Training support from the University of Texas Medical Branch Biodefense Training Program\newline NIH Grant T32 AI060945\\
+\end{tabu}
+
+
+\section*{Publications}
+\begin{refsection}
+\nocite{Beck:2014cm}
+
+\nocite{Beck:2013fg}
+
+\setlength\bibitemsep{.2cm} % Increse the separation of the bibliography entries.
+\newrefcontext[sorting=ydnt]	
+\printbibliography[heading=none]
+\end{refsection}
+
+\section*{Reviews}
+\begin{refsection}
+
+\nocite{Beck:2015eu}
+
+\setlength\bibitemsep{.2cm} % Increse the separation of the bibliography entries.
+\newrefcontext[sorting=ydnt]
+\printbibliography[heading=none]
+\end{refsection}
+
+\section*{Extramural Honors}
+\begin{tabu} to \textwidth {X[.25,r]|X[L]}
+	2014& American Society for Virology Travel Award\\
+	2014& Finalist, Maurice R. Hilleman Early Career Investigator Award\newline National Foundation for Infectious Diseases\\
+	2011& American Society for Virology Travel Award\\
+	2011& Who's Who Among American Students in American Colleges and Universities\\
+\end{tabu}
+
+\section*{Intramural Honors In The Course of Doctoral Study}
+\begin{tabu} to \textwidth {X[.25,r]|X[L]}
+	2015& Pathology Day Poster Award\\
+	2015& James W. McLaughlin Colloquium Travel Award\\
+	2015& Sealy Center for Vaccine Development Travel Grant\\
+	2014& Sealy Center for Vaccine Development Travel Grant\\
+	2014& Pathology Day Poster Award\\
+	2013& Center for Tropical Diseases Graduate Student Award\\
+	2013& Robert Bennett Tuition Scholarship\\
+	2012& Sealy Center for Vaccine Development Travel Grant\\
+	2012& James W. McLaughlin Colloquium Travel Award\\
+	2012& Pathology Day Poster Award\\
+	2011& James W. McLaughlin Colloquium Travel Award\\
+\end{tabu}
+
+\section*{Abstracts}
+\begin{refsection}
+\nocite{Beck:2015ty}
+
+\nocite{Beck:2014ts}
+
+\nocite{Beck:2014tsa}
+
+\nocite{Beck:2014tw}
+
+\nocite{Beck:2013vv}
+
+\nocite{Beck:2012we}
+
+\nocite{Beck:2012wea}
+
+\setlength\bibitemsep{.2cm} % Increse the separation of the bibliography entries.
+\newrefcontext[sorting=ydnt]	
+\printbibliography[heading=none]
+\end{refsection}
+
+\section*{Related Professional Experience}
+\begin{tabu}{X[.25,r]|X[L]}
+	2008--2009&{\bf United States Army Medical Research Institute of Infectious Diseases (USAMRIID)\newline Frederick, MD}\\
+	&\emph{Laboratory Technician, Aerobiology Division}\\
+	2004--2008&{\bf United States Army Edgewood Chemical Biological Center\newline Edgewood, MD}\\
+	&\emph{Laboratory Technician}\\
+\end{tabu}
+
+\section*{Teaching Experience}
+\begin{tabu}{X[.25,r]|X[L]}
+	2011&\textbf{University of Texas Medical Branch, School of Medicine}\\
+	&\textbf{Course Title:} Pathobiology and Host Defenses 1011\\
+	&\textbf{Duties: }Laboratory instruction of first-year students, for introductory coursework in microbial pathology.\newline\\
+	2008&\textbf{George Mason University}\\
+	&\textbf{Course Title:} BIOL 619, Topics in Aerosol Biology\\
+	&\textbf{Duties:} Laboratory instruction for a graduate-level course on aerosol biology methods. Responsibilities included instruction of
+	small groups and grading of technical proficiencies.\\
+\end{tabu}
+
+\section*{Professional Affiliations}
+\begin{tabu}{X[.25,r]|X[L]}
+	2011--present&{American Society for Virology}\\
+\end{tabu}
+
+
+\end{document}
